@@ -1,0 +1,86 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="info-list-container">
+  <div class="info-list-row">
+    <div class="account-image-holder">
+      <img src="{% static 'images/itel.jpg' %}" />
+    </div>
+    <div class="fullname-holder">
+      <h2>{{user.first_name}} {{user.last_name}}</h2>
+    </div>
+    <div></div>
+  </div>
+  <div class="info-list-row">
+    <h3 class="heading">Contact info</h3>
+    <ul class="info-list">
+      <li class="info-list-item">
+        <span class="label"
+          >Email <a href="{% url 'edit_email' %}">edit</a></span
+        >
+        <span class="info-list-value">{{user.email}}</span>
+      </li>
+      <li class="info-list-item">
+        <span class="label"
+          >Phone
+          <a href=""
+            >{% if user.phone_number %}edit {% else %}add{% endif %}</a
+          ></span
+        >
+        <span class="info-list-value">{{user.phone_number}}</span>
+      </li>
+      <li class="info-list-item">
+        <span class="label"
+          >Website
+          <a href=""
+            >{% if user.website %}edit {% else %} add {% endif %}</a
+          ></span
+        >
+        <span class="info-list-value">{{user.website}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="info-list-row">
+    <h3 class="heading">Personal info</h3>
+    <ul class="info-list">
+      <li class="info-list-item">
+        <span class="label"
+          >First Name
+          <a href="#">
+            {% if user.first_name %} edit {% else %} add {% endif %}
+          </a>
+        </span>
+        <span class="info-list-value">{{user.first_name}} </span>
+      </li>
+      <li class="info-list-item">
+        <span class="label"
+          >Last Name
+          <a href="#">
+            {% if user.last_name %}edit{% else %}add{% endif %}
+          </a>
+        </span>
+        <span class="info-list-value">{{user.last_name}}</span>
+      </li>
+
+      <li class="info-list-item">
+        <span class="label"
+          >Location
+          <a href=""
+            >{% if user.location %}edit{% else %}add{% endif %}</a
+          ></span
+        >
+        <span class="info-list-value">{{user..location}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="info-list-row">
+    <h3 class="heading">Security</h3>
+    <ul class="info-list">
+      <li class="info-list-item">
+        <span class="label">password <a href="#">change</a></span>
+        <span class="info-list-value"></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
