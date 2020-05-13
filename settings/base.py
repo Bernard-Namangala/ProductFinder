@@ -5,6 +5,8 @@ module to hold the base settings of ProductFinder Project
 import os
 import json
 from django.core.exceptions import ImproperlyConfigured
+from django.shortcuts import reverse
+
 
 with open("secrets.json") as f:
     SECRETS = json.loads(f.read())
@@ -41,6 +43,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'frontend',
     'authentication',
+    'stores',
+    'products'
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -137,5 +141,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = ['static']
 
 AUTH_USER_MODEL = 'authentication.User'
+
+LOGIN_REDIRECT_URL = "login_redirect"

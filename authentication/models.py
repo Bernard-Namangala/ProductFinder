@@ -13,8 +13,13 @@ class User(AbstractUser):
     custom user model
     """
     username = None
+    first_name = None
+    last_name = None
     email = models.EmailField(ugettext_lazy('email address'), unique=True)
-    phone_number = models.CharField(max_length=9, blank=True)
+    phone = models.CharField(max_length=3086, blank=True)
+    website = models.URLField(blank=True)
+    name = models.CharField(max_length=255, blank=True)
+    profile_picture = models.ImageField(upload_to="profile_pictures/", blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -23,5 +28,3 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
-
-

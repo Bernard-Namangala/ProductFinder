@@ -28,24 +28,6 @@ const Navbar = () => {
           <div id="top-list">
             <ul className="mb-0">
               <NavLinks />
-              {/* <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Help</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Home</a>
-              </li> */}
             </ul>
           </div>
         </div>
