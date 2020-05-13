@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'frontend',
     'authentication',
     'stores',
-    'products'
+    'products',
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
